@@ -13,8 +13,10 @@ function Searched() {
             setSearchedRecipes(data.results)
         })
     }
+    
     useEffect(()=>{
         getSearched(params.search);
+        console.log(params.search);
     },[params.search]);
   
   
@@ -22,10 +24,12 @@ function Searched() {
     <div className='cuisine-grid'>
         {
             searchedRecipes.map((item)=>{
-                <div className="card" key={item.id}>
-                    <img src={item.image} alt="" />
-                    <h4>{item.title}</h4>
-                </div>
+                return(
+                    <div className="card" key={item.id}>
+                        <img src={item.image} alt="" />
+                        <h4>{item.title}</h4>
+                    </div>
+                )
             })
         }
     </div>

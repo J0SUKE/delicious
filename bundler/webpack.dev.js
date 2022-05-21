@@ -20,12 +20,13 @@ module.exports = merge(
         },
         devServer:
         {
+            historyApiFallback: true,
             host: 'local-ip',
             port: portFinderSync.getPort(8080),
             open: true,
             https: false,
             allowedHosts: 'all',
-            hot: false,
+            hot: true,
             watchFiles: ['src/**', 'static/**'],
             static:
             {
